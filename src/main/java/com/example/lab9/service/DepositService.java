@@ -19,6 +19,7 @@ public class DepositService {
         this.depositRepository = depositRepository;
     }
 
+    @Transactional 
     public void deposit(Long accountId, Double amount) {
         if (amount == null || amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be greater than 0");
